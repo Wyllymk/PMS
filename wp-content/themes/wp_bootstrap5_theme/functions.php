@@ -18,12 +18,16 @@ if ( ! file_exists( get_template_directory() . '/class-bootstrap-5-navwalker.php
 function wp_custom_styles(){
     wp_register_style('bootstrap5', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), '5.3.0', 'all');
     wp_enqueue_style('bootstrap5');
+    wp_register_style('custom', get_template_directory_uri().'/assets/css/custom.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('custom');
 }
 add_action('wp_enqueue_scripts', 'wp_custom_styles');
 
 function wp_custom_scripts(){
     wp_register_script('bootstrap-js', get_template_directory_uri(). 'assets/js/bootstrap.min.js', array(), '5.3.0', true);
     wp_enqueue_script('bootstrap-js');
+    wp_register_script('custom-js', get_template_directory_uri(). 'assets/js/custom.js', array(), '1.0.0', true);
+    wp_enqueue_script('custom-js');
 }
 add_action('wp_enqueue_scripts', 'wp_custom_scripts');
 /*-------------------------------------------------------------------------*/
@@ -162,3 +166,32 @@ function time_to_go($timestamp){
             return $output;
     }
 }
+
+/*-------------------------------------------------------------------------*/
+/*                           CUSTOM USER ROLES                             */
+/*-------------------------------------------------------------------------*/
+remove_role( 'subscriber' );
+remove_role( 'editor' );
+remove_role( 'contributor' );
+remove_role( 'author' );
+
+add_role('moderator', __(
+    'Moderator'),
+    array(
+        'read'            => true, // Allows a user to read
+        'create_posts'      => true, // Allows user to create new posts
+        'edit_posts'        => true, // Allows user to edit their own posts
+        'edit_others_posts' => true, // Allows user to edit others posts too
+        'publish_posts' => true, // Allows the user to publish posts
+        'manage_categories' => true, // Allows user to manage post categories
+        )
+ );
+
+ add_role('newbie', __(
+    'Newbie'),
+    array(
+        'read'            => true, // Allows a user to read
+        'create_posts'    => false, // Allows user to create new posts
+        'edit_posts'      => true, // Allows user to edit their own posts
+        )
+ );
