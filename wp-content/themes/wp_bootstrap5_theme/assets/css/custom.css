@@ -1,0 +1,158 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: "Montserrat";
+}
+
+
+
+body {
+	background: black;
+}
+
+
+.homepage {
+	background: url('../images/hero.png');
+	background-size: 100% 100%;
+	background-position: center;
+	min-height: 57vw;
+
+}
+
+.homepage-heading,
+.homepage-content {
+	margin: 0px auto;
+}
+
+.homepage-heading {
+	width: 90%;
+	padding-top: 1vw;
+	min-height: 6vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.heading2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+}
+
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.list {
+	margin: 20px;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+
+}
+
+.brand>li>a {
+	font-weight: 700;
+	font-size: 40px;
+}
+
+.brand>li {
+
+	font-weight: 700;
+	font-size: 40px;
+	color: white;
+}
+
+.links>li>a,
+.member>li>a,
+.member>button,
+.homepage-content>p {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.member {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.member>button {
+	color: white;
+	font-weight: 600;
+	margin: 20px;
+	border: none;
+	padding: 20px;
+	background: rgb(35, 164, 237);
+	border-radius: 4px;
+
+}
+
+
+
+.homepage-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 40%;
+	align-items: center;
+	text-align: center;
+	height: 30vw;
+	color: white;
+}
+
+.homepage-content>h1 {
+	font-size: 70px;
+	margin-top: 10vw;
+}
+
+.homepage-content>p {
+	font-size: 25px;
+	padding: 40px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.buttons>button {
+	padding: 20px;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+
+.quote {
+	background: transparent;
+	border: 2px solid white;
+}
+
+.quote:hover {
+	background: rgb(35, 164, 237);
+	border: 2px solid white;
+
+}
+
+.learn:hover {
+	background: rgb(35, 164, 237);
+	border: 2px solid white;
+}
+
+.learn {
+	border: 2px solid white;
+	background: transparent;
+}
+
