@@ -53,10 +53,6 @@ get_header();?>
               <option value="completed">Completed</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="action">Action</label>
-            <input type="text" class="form-control" id="action" placeholder="Enter action">
-          </div>
         </form>
       </div>
       <div class="modal-footer">
