@@ -169,25 +169,25 @@ function time_to_go($timestamp){
 /*-------------------------------------------------------------------------*/
 /*             SHOW DIFFERENT DASHBOARD DEPENDING ON USER                  */
 /*-------------------------------------------------------------------------*/
-$template = locate_template( array( 'dashboard-pm.php' ) );
-
 function dashboard_page_template($template) {
-    //if user is not logged in, just return and show the default homepage
     if(!is_user_logged_in()) return $template;
   
-    $new_template = '';
-    $current_user = wp_get_current_user();
-    $user = new WP_User( $current_user->ID);
-  
-    if(in_array('project_manager', $user->roles) || in_array('administrator', $user->roles)){ //assuming the role name is project_manager or administrator
-      $new_template = locate_template( array( 'dashboard-pm.php' ) );
-    }
-    elseif(in_array('developer', $user->roles)){ //assuming the role name is developer
-      $new_template = locate_template( array( 'dashboard-d.php' ) );
-    }
-    if ( '' != $new_template ) {
-      $template = $new_template;
+    $current_page = get_queried_object();
+    if($current_page->post_name === 'dashboard') { // modify only if the current page is 'dashboard'
+        $new_template = '';
+        $current_user = wp_get_current_user();
+        $user = new WP_User( $current_user->ID);
+
+        if(in_array('project_manager', $user->roles) || in_array('administrator', $user->roles)){
+            $new_template = locate_template( array( 'dashboard-pm.php' ) );
+        }
+        elseif(in_array('developer', $user->roles)){
+            $new_template = locate_template( array( 'dashboard-d.php' ) );
+        }
+        if ( '' != $new_template ) {
+            $template = $new_template;
+        }
     }
     return $template;
-  }
-  add_filter( 'template_include', 'dashboard_page_template' );
+}
+add_filter( 'template_include', 'dashboard_page_template' );
