@@ -166,32 +166,28 @@ function time_to_go($timestamp){
             return $output;
     }
 }
-
 /*-------------------------------------------------------------------------*/
-/*                           CUSTOM USER ROLES                             */
+/*             SHOW DIFFERENT DASHBOARD DEPENDING ON USER                  */
 /*-------------------------------------------------------------------------*/
-remove_role( 'subscriber' );
-remove_role( 'editor' );
-remove_role( 'contributor' );
-remove_role( 'author' );
+$template = locate_template( array( 'dashboard-pm.php' ) );
 
-add_role('moderator', __(
-    'Moderator'),
-    array(
-        'read'            => true, // Allows a user to read
-        'create_posts'      => true, // Allows user to create new posts
-        'edit_posts'        => true, // Allows user to edit their own posts
-        'edit_others_posts' => true, // Allows user to edit others posts too
-        'publish_posts' => true, // Allows the user to publish posts
-        'manage_categories' => true, // Allows user to manage post categories
-        )
- );
-
- add_role('newbie', __(
-    'Newbie'),
-    array(
-        'read'            => true, // Allows a user to read
-        'create_posts'    => false, // Allows user to create new posts
-        'edit_posts'      => true, // Allows user to edit their own posts
-        )
- );
+function dashboard_page_template($template) {
+    //if user is not logged in, just return and show the default homepage
+    if(!is_user_logged_in()) return $template;
+  
+    $new_template = '';
+    $current_user = wp_get_current_user();
+    $user = new WP_User( $current_user->ID);
+  
+    if(in_array('project_manager', $user->roles) || in_array('administrator', $user->roles)){ //assuming the role name is project_manager or administrator
+      $new_template = locate_template( array( 'dashboard-pm.php' ) );
+    }
+    elseif(in_array('developer', $user->roles)){ //assuming the role name is developer
+      $new_template = locate_template( array( 'dashboard-d.php' ) );
+    }
+    if ( '' != $new_template ) {
+      $template = $new_template;
+    }
+    return $template;
+  }
+  add_filter( 'template_include', 'dashboard_page_template' );

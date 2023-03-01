@@ -29,7 +29,7 @@
             ));
             ?>
         </div>
-        <a role="button" class="btn btn-outline-success" href="../PMS/login">LOGIN</a>
+        <a role="button" class="btn btn-outline-success" href="../PMS/wp-login">LOGIN</a>
     </div>
 </nav>
     
