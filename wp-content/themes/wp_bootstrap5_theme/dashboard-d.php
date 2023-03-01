@@ -5,26 +5,71 @@
 get_header();?>
 <?php
 
-if (isset($_POST['update-meta'])) {
+if (isset($_POST['accepted'])) {
     $post_id = $_POST['post-id'];
     $new_value = $_POST['meta-field'];
-    update_post_meta($post_id, 'meta_key', $new_value);
-  }
+    update_post_meta($post_id, 'project_status_select', $new_value);
+}
+
+if (isset($_POST['completed'])) {
+    $post_id = $_POST['project-id'];
+    $new_value = $_POST['meta-field2'];
+    update_post_meta($post_id, 'project_status_select', $new_value);
+}
 
 $current_user = wp_get_current_user();
 $user = new WP_User( $current_user ->ID);
+$project_status = get_post_meta(get_the_ID(), 'project_status_select', true);
+
+// The Query
+$query = new WP_Query(array(
+    'post_type' => 'project',
+    'meta_query' => array(
+        array(
+            'key' => 'project_user',
+            'value' => $current_user->ID,
+        )
+    )
+));
+query_posts( $query );
+
+// The Loop
+if($query->have_posts()):
+while ( $query->have_posts() ) : 
+    $query->the_post();  
+// your post content ( title, excerpt, thumb....)
+
+$project_start = get_post_meta(get_the_ID(), 'project_start', true);
+$project_end = get_post_meta(get_the_ID(), 'project_end', true);
+$project_status = get_post_meta(get_the_ID(), 'project_status_select', true);
+
+$project_user_id = get_post_meta(get_the_ID(), 'project_user', true);
+
+endwhile;
+//Reset Query
+wp_reset_query();
+endif;
 ?>
 <section class="content">
             <div class="container-fluid">
                 <div class="col-lg-12">
-                    <div class="m-2 card card-outline card-success">
+                    <div class="m-5 card card-outline card-success">
                         <div class="card-header">
                             <div class="card-tools">
                                 <h5 class="text-center text-primary mt-2"><u>Complete the Projects Listed</u></h5>
                             </div>
+                            <div class="alert alert-warning alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Completed') { echo'style="display:none;"'; } ?> role="alert">
+                                <strong>Warning!</strong> Once a project has been accepted it cannot be retracted.
+                            </div>
+                            <div class="alert alert-info mb-2 alert-dismissible text-center" <?php if ($project_status == 'Pending' || $project_status == 'Completed') { echo'style="display:none;"'; } ?>  role="alert">
+                                <strong>Success!</strong> This Project has been marked to be In Progress
+                            </div>
+                            <div class="alert alert-success alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Pending') { echo'style="display:none;"'; } ?>  role="alert">
+                                <strong>Congratulations!</strong> You have completed the project.
+                            </div>
                         </div>
                         <div class="card-body">
-                            <table class="table tabe-hover table-condensed" id="list">
+                            <table class="table table-hover table-condensed" id="list">
                                 <colgroup>
                                     <col width="5%">
                                     <col width="10%">
@@ -49,7 +94,15 @@ $user = new WP_User( $current_user ->ID);
                                 </thead>
                                 <?php
                                 // The Query
-                                $query = new WP_Query(array('post_type' => 'project'));
+                                $query = new WP_Query(array(
+                                    'post_type' => 'project',
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => 'project_user',
+                                            'value' => $current_user->ID,
+                                        )
+                                    )
+                                ));
                                 query_posts( $query );
 
                                 // The Loop
@@ -60,7 +113,7 @@ $user = new WP_User( $current_user ->ID);
 
                                 $project_start = get_post_meta(get_the_ID(), 'project_start', true);
                                 $project_end = get_post_meta(get_the_ID(), 'project_end', true);
-                                $project_status = get_post_meta(get_the_ID(), 'taskbook_status_select', true);
+                                $project_status = get_post_meta(get_the_ID(), 'project_status_select', true);
 
                                 $project_user_id = get_post_meta(get_the_ID(), 'project_user', true);
 
@@ -92,18 +145,18 @@ $user = new WP_User( $current_user ->ID);
                                         <td>
                                             <div class="mt-2 d-flex gap-1" >
                                                 <form action="" method="post">
-                                                    <input type="hidden" name="meta-field" value="<?php echo get_post_meta(get_the_ID(), 'project_user', true); ?>">
-                                                    <input type="hidden" name="post-id" value="<?php echo get_the_ID(); ?>">
-                                                    <button class="btn btn-primary"type="submit" name="accepted">Accept</button>
+                                                    <input type="hidden" name="meta-field" value="In Progress">
+                                                    <input type="hidden" name="post-id" value="<?php echo get_the_ID(); ?>">                      
+                                                    <button class="btn btn-primary"type="submit" name="accepted" <?php if ($project_status == 'In Progress' || $project_status == 'Completed') { echo'disabled'; } ?> >Accept</button>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="mt-2 d-flex gap-1" >
                                                 <form action="" method="post">
-                                                    <input type="hidden" name="meta-field" value="<?php echo get_post_meta(get_the_ID(), 'project_user', true); ?>">
+                                                    <input type="hidden" name="meta-field2" value="Completed">
                                                     <input type="hidden" name="project-id" value="<?php echo get_the_ID(); ?>">
-                                                    <button class="btn btn-primary"type="submit" name="completed">Completed</button>
+                                                    <button class="btn btn-primary"type="submit" name="completed" <?php if ($project_status == 'Completed') { echo'disabled'; } ?>>Completed</button>
                                                 </form>
                                             </div>                       
                                         </td>

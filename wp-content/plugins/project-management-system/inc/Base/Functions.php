@@ -61,7 +61,7 @@ function project_register_metabox() {
 	$cmb_demo->add_field( array(
 		'name'             => esc_html__( 'Status Select', 'taskbook' ),
 		'desc'             => esc_html__( 'Current Project Status', 'taskbook' ),
-		'id'               => 'taskbook_status_select',
+		'id'               => 'project_status_select',
 		'type'             => 'select',
 		'show_option_none' => true,
 		'options'          => array(

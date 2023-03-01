@@ -22,11 +22,11 @@ $user = new WP_User( $current_user ->ID);
                         <div class="card-header">
                             <div class=" d-flex  gap-5">
                                 <h3 class="flex-grow-1 text-center text-primary"><u>List of Projects</u></h3>
-                                <a class=" ms-auto btn btn-primary" href=""> Add New project</a>
+                                <a class=" ms-auto btn btn-primary" href="../create-project"> Add New project</a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table tabe-hover table-condensed" id="list">
+                            <table class="table table-hover table-condensed" id="list">
                                 <colgroup>
                                     <col width="5%">
                                     <col width="10%">
@@ -45,7 +45,7 @@ $user = new WP_User( $current_user ->ID);
                                         <th>Project Started</th>
                                         <th>Project Due Date</th>
                                         <th>Project Status</th>
-                                        <th>Assign Project</th>
+                                        <th>Assigned Developer</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -62,7 +62,7 @@ $user = new WP_User( $current_user ->ID);
 
                                 $project_start = get_post_meta(get_the_ID(), 'project_start', true);
                                 $project_end = get_post_meta(get_the_ID(), 'project_end', true);
-                                $project_status = get_post_meta(get_the_ID(), 'taskbook_status_select', true);
+                                $project_status = get_post_meta(get_the_ID(), 'project_status_select', true);
 
                                 $project_user_id = get_post_meta(get_the_ID(), 'project_user', true);
 
@@ -85,43 +85,17 @@ $user = new WP_User( $current_user ->ID);
                                             <p><?php the_content();?></b></p>
                                             <p class="truncate"></p>
                                         </td>
-
                                         <td><b><?php echo esc_attr( $project_start ) ;?></b></td>
                                         <td><b><?php echo esc_attr( $project_end ) ;?></b></td>
                                         <td>
                                             <span class=''><?php echo esc_attr( $project_status ) ;?></span>                        
                                         </td>
-                                        <?php
-                                        // Get all users with the "User" role
-                                        $users = get_users( array(
-                                            'role'    => 'developer',
-                                            'orderby' => 'user_nicename',
-                                        ) );
-                                        $user_options = array();
-                                        foreach ( $users as $user ) {
-                                            $user_options[ $user->ID ] = $user->display_name;
-                                        }
-                                        ?>
                                         <td>
-                                            <div class="form-group mt-2">
-                                                <select class="form-control" id="user" name="user">
-                                                    <option value="">Select Developer</option>
-                                                    <?php foreach ( $user_options as $user_id => $user_name ) : ?>
-                                                        <option value="<?php echo $user_id; ?>"><?php echo $user_name; ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-
-                                            </div>
+                                            <span class=''><?php echo esc_attr( $project_user) ;?></span>                        
                                         </td>
-
                                         <td>
                                             <div class="mt-2 d-flex gap-1" >
                                                 <a href="../edit-project/"><input class="btn btn-primary"type="button" value="Edit"></a>
-                                                <form action="" method="post">
-                                                    <input type="hidden" name="meta-field" value="<?php echo get_post_meta(get_the_ID(), 'project_user', true); ?>">
-                                                    <input type="hidden" name="post-id" value="<?php echo get_the_ID(); ?>">
-                                                    <button class="btn btn-primary"type="submit" name="update-meta">Save</button>
-                                                </form>
                                                 <form action="" method="post">
                                                     <input type="hidden" name="meta-field" value="<?php echo get_post_meta(get_the_ID(), 'project_user', true); ?>">
                                                     <input type="hidden" name="project-id" value="<?php echo get_the_ID(); ?>">
