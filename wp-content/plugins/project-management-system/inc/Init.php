@@ -15,7 +15,7 @@ final class Init{
             Pages\CPT::class,
             Pages\Roles::class,
             Pages\CustomFunctions::class,
-            //Base\Functions::class,
+            Base\Functions::class,
         ];
     }
 
