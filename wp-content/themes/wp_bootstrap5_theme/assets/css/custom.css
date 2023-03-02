@@ -5,15 +5,12 @@
 	/* font-family: "Montserrat"; */
 }
 
-body {
-	/* background: black; */
-}
-
 .homepage {
 	
 	background-size: 100% 100%;
 	background-position: center;
 	min-height: 50vw;
+	font-family: "Montserrat";
 
 }
 
@@ -161,6 +158,7 @@ a {
 	font-size: xx-large;
 	font-weight: bolder;
 	padding-top: 70px;
+	size: 3cm;
 }
 
 .second-page p{
@@ -170,7 +168,7 @@ a {
 
 
 .contact-page{
-	background-color: black;
+	background-color: ;
 	color: white;
 	text-align: center;
 	padding-top: 30px;
