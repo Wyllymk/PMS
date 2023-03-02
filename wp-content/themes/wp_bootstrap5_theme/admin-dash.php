@@ -4,7 +4,6 @@
  */
 get_header();
 ?>
-
 <head>
     <link rel='stylesheet' href='wp-content/themes/wp_bootstrap5_theme/assets/css/add_project.css'>
     <style>
@@ -41,25 +40,21 @@ get_header();
                 <ul class='list'>
                     <li>
                         <a href='#' title=''>
-                            <span class='icon flaticon-home'></span>
                             <span class='text'>Home</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' title='' class='active'>
-                            <span class='icon flaticon-notepad-1'></span>
                             <span class='text'>Tasks</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' title=''>
-                            <span class='icon flaticon-settings-5'></span>
                             <span class='text'>Settings</span>
                         </a>
                     </li>
                     <li>
                         <a href='#' title=''>
-                            <span class='icon flaticon-power'></span>
                             <span class='text'>Exit</span>
                         </a>
                     </li>

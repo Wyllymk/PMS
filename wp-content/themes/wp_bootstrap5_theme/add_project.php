@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-
+<div class="container">
 <head>
     <link rel='stylesheet' href='wp-content/themes/wp_bootstrap5_theme/assets/css/add_project.css'>
 </head>
@@ -146,5 +146,6 @@ get_header();
                                 </div>
                             </div>
                 </section>
+                </div>
                 <?php get_footer();
                 ?>

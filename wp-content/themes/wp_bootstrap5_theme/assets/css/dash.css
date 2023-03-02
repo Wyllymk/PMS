@@ -1,13 +1,9 @@
-body {
+.container {
     background: #191c2e;
     font-size: 13px;
     overflow-x: hidden;
     direction: ltr;
     text-align: left;
-}
-* {
-    font-family: 'iransans', sans-serif;
-    font-weight: 300;
 }
 
 .effect {

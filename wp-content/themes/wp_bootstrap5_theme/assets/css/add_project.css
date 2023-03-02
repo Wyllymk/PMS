@@ -1,22 +1,13 @@
-body {
+.container {
     background: #191c2e;
     font-size: 13px;
     overflow-x: hidden;
     direction: ltr;
     text-align: left;
 }
-* {
-    font-family: 'iransans', sans-serif;
-    font-weight: 300;
-}
-
-.effect {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba( 75, 8, 60, 0.281 );
+.no-padding{
+    background: #191c2e;
+    margin: 10px;
 }
 
 #main-header {
@@ -73,9 +64,11 @@ body {
 }
 .wrapper .menu-left {
     padding: 80px 20px;
+    margin-left: -40px;
 }
 
 .wrapper .menu-left .list li {
+    align-content: center;
     text-align: center;
     width: 100%;
     margin: 20px 10px;

@@ -33,6 +33,12 @@ get_header();
 <div class = 'col-xl-1 col-sm-2'>
 <nav class = 'menu-left'>
 <ul class = 'list'>
+  <li>
+<a href = '#' title = ''>
+<span class = 'icon flaticon-home'></span>
+<span class = 'text'><h3>Home</h3></span>
+</a>
+</li>
 <li>
 <a href = '#' title = ''>
 <span class = 'icon flaticon-home'></span>
