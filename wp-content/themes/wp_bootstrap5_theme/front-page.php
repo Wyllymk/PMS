@@ -47,7 +47,7 @@
 </div>
 
 
-<div class="contact-page">
+<div class="contact-page" style="margin-bottom:50px">
     <h1>CONTACT DETAILS</h1>
     <P>For any type of inquiries please dont hesitate to ge intouch with us.<br> The easiest way is to send us an email to the following adress or use the form below.</P>
     <div class="row justify-content-center">
