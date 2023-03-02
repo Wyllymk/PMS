@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Dashboard
+* Template Name: Dashboard-1
 */
 get_header();
 ?>
