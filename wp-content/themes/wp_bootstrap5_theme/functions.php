@@ -18,12 +18,16 @@ if ( ! file_exists( get_template_directory() . '/class-bootstrap-5-navwalker.php
 function wp_custom_styles(){
     wp_register_style('bootstrap5', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), '5.3.0', 'all');
     wp_enqueue_style('bootstrap5');
+    wp_register_style('custom', get_template_directory_uri().'/assets/css/custom.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('custom');
 }
 add_action('wp_enqueue_scripts', 'wp_custom_styles');
 
 function wp_custom_scripts(){
     wp_register_script('bootstrap-js', get_template_directory_uri(). 'assets/js/bootstrap.min.js', array(), '5.3.0', true);
     wp_enqueue_script('bootstrap-js');
+    wp_register_script('custom-js', get_template_directory_uri(). 'assets/js/custom.js', array(), '1.0.0', true);
+    wp_enqueue_script('custom-js');
 }
 add_action('wp_enqueue_scripts', 'wp_custom_scripts');
 /*-------------------------------------------------------------------------*/
@@ -173,3 +177,28 @@ function time_to_go($timestamp){
             return $output;
     }
 }
+/*-------------------------------------------------------------------------*/
+/*             SHOW DIFFERENT DASHBOARD DEPENDING ON USER                  */
+/*-------------------------------------------------------------------------*/
+function dashboard_page_template($template) {
+    if(!is_user_logged_in()) return $template;
+  
+    $current_page = get_queried_object();
+    if($current_page->post_name === 'dashboard') { // modify only if the current page is 'dashboard'
+        $new_template = '';
+        $current_user = wp_get_current_user();
+        $user = new WP_User( $current_user->ID);
+
+        if(in_array('project_manager', $user->roles) || in_array('administrator', $user->roles)){
+            $new_template = locate_template( array( 'dashboard-pm.php' ) );
+        }
+        elseif(in_array('developer', $user->roles)){
+            $new_template = locate_template( array( 'dashboard-d.php' ) );
+        }
+        if ( '' != $new_template ) {
+            $template = $new_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'dashboard_page_template' );
