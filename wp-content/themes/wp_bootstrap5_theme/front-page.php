@@ -40,7 +40,7 @@
 </div>
 
 <div class="second-page">
-    <h1>Offered Service</h1>
+    <h1>OFFERED SERVICES</h1>
     <p>Effortlessly Manage Your Projects With Our Powerful Project Management System</p>
     <p>Assign Tasks, Track Progress and Streamline Workflows With Ease</p>
 
