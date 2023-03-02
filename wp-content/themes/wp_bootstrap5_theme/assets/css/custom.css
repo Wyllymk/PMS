@@ -5,18 +5,10 @@
 	font-family: "Montserrat";
 }
 
-
-
-body {
-	background: black;
-}
-
-
 .homepage {
-	background: url('../images/hero.png');
-	background-size: 100% 100%;
-	background-position: center;
-	min-height: 57vw;
+	
+	background-color: black;
+	height: 40vh;
 
 }
 
@@ -28,7 +20,6 @@ body {
 .homepage-heading {
 	width: 90%;
 	padding-top: 1vw;
-	min-height: 6vh;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -39,44 +30,6 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	gap: 40px;
-}
-
-.links {
-	display: flex;
-	justify-content: space-between;
-}
-
-
-.list {
-	margin: 20px;
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-	display: inline-block;
-
-}
-
-.brand>li>a {
-	font-weight: 700;
-	font-size: 40px;
-}
-
-.brand>li {
-
-	font-weight: 700;
-	font-size: 40px;
-	color: white;
-}
-
-.links>li>a,
-.member>li>a,
-.member>button,
-.homepage-content>p {
-	font-weight: 500;
-	font-size: 20px;
 }
 
 .member {
@@ -97,8 +50,6 @@ a {
 
 }
 
-
-
 .homepage-content {
 	display: flex;
 	flex-direction: column;
@@ -106,13 +57,12 @@ a {
 	max-width: 40%;
 	align-items: center;
 	text-align: center;
-	height: 30vw;
 	color: white;
 }
 
 .homepage-content>h1 {
 	font-size: 70px;
-	margin-top: 10vw;
+	
 }
 
 .homepage-content>p {
@@ -135,24 +85,23 @@ a {
 }
 
 
-.quote {
+.login {
 	background: transparent;
 	border: 2px solid white;
 }
 
-.quote:hover {
+.login:hover {
 	background: rgb(35, 164, 237);
 	border: 2px solid white;
 
 }
 
-.learn:hover {
+.contact:hover {
 	background: rgb(35, 164, 237);
 	border: 2px solid white;
 }
 
-.learn {
+.contact {
 	border: 2px solid white;
 	background: transparent;
 }
-
