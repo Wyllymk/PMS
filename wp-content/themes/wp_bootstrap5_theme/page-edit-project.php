@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Create Project
+ * Template Name: Edit Project
 */
 get_header();?>
 <?php
@@ -53,8 +53,6 @@ if (isset( $_POST['cpt_nonce_field'] ) && wp_verify_nonce( $_POST['cpt_nonce_fie
         // insert the post into the database
         $project_start = $_POST['start'];
 
-        global $post;
-        $post_id = $post->ID;
         $project_id = wp_insert_post( $new_project);
         //add_post_meta($cpt_id,'project_start',$project_start);
         if ($project_id) {
@@ -80,25 +78,25 @@ if (isset( $_POST['cpt_nonce_field'] ) && wp_verify_nonce( $_POST['cpt_nonce_fie
                         <?php echo $alert_message; ?>
                     </div>
                 <?php endif; ?>
-                <h3 class="text-center text-primary">Add Project</h3>
+                <h3 class="text-center text-primary">Edit Project</h3>
                 <div class="form-group mt-2">
                     <label for="title"><?php _e('Enter the Project Title:', 'mytextdomain'); ?></label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Project Title" required>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Project Title">
                 </div>
                 <div class="form-group mt-2">
                     <label for="content"><?php _e('Enter the Project Description:', 'mytextdomain'); ?></label>
-                    <textarea rows="3" class="form-control" id="content" name="content" placeholder="Enter Project Description here" required></textarea>
+                    <textarea rows="3" class="form-control" id="content" name="content" placeholder="Enter Project Description here"></textarea>
                 </div>
                 <div class="form-group mt-2">
                     <label for="content">Start Date:</label>
-                    <input type="date" class="form-control" id="start_date" name="start" placeholder="Enter Project Start Date here" required>
+                    <input type="date" class="form-control" id="start_date" name="start" placeholder="Enter Project Start Date here">
                 </div>
                 <div class="form-group mt-2">
                     <label for="content">Due Date:</label>
-                    <input type="date" class="form-control" id="due_date" name="deadline" placeholder="Enter Project Deadline here" required>
+                    <input type="date" class="form-control" id="due_date" name="deadline" placeholder="Enter Project Deadline here">
                 </div>
                 <div class="form-group mt-2">
-                    <input type="hidden" class="form-control" id="status" name="status" value="Pending" placeholder="Project Status">
+                    <input type="hidden" class="form-control" id="status" name="status" value="Pending" placeholder="Enter Project Deadline here">
                 </div>
                 <?php
                 // Get all users with the "User" role

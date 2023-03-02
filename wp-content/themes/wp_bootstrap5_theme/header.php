@@ -30,6 +30,7 @@
             ?>
         </div>
         <a role="button" class="btn btn-outline-success" href="../PMS/wp-login">LOGIN</a>
+        <a role="button" class="btn btn-outline-success" href="http://localhost/PMS/wp-login.php?action=logout">LOGOUT</a>
     </div>
 </nav>
     

@@ -58,13 +58,13 @@ endif;
                             <div class="card-tools">
                                 <h5 class="text-center text-primary mt-2"><u>Complete the Projects Listed</u></h5>
                             </div>
-                            <div class="alert alert-warning alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Completed') { echo'style="display:none;"'; } ?> role="alert">
+                            <div class="alert alert-warning alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Completed'  || $project_status == '') { echo'style="display:none;"'; } ?> role="alert">
                                 <strong>Warning!</strong> Once a project has been accepted it cannot be retracted.
                             </div>
-                            <div class="alert alert-info mb-2 alert-dismissible text-center" <?php if ($project_status == 'Pending' || $project_status == 'Completed') { echo'style="display:none;"'; } ?>  role="alert">
+                            <div class="alert alert-info mb-2 alert-dismissible text-center" <?php if ($project_status == 'Pending' || $project_status == 'Completed'  || $project_status == '') { echo'style="display:none;"'; } ?>  role="alert">
                                 <strong>Success!</strong> This Project has been marked to be In Progress
                             </div>
-                            <div class="alert alert-success alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Pending') { echo'style="display:none;"'; } ?>  role="alert">
+                            <div class="alert alert-success alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Pending'  || $project_status == '') { echo'style="display:none;"'; } ?>  role="alert">
                                 <strong>Congratulations!</strong> You have completed the project.
                             </div>
                         </div>
