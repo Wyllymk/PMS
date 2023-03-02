@@ -14,6 +14,9 @@ class CustomFunctions{
         add_action('after_setup_theme', array($this, 'remove_admin_bar'));
         add_action( 'save_post_project', array($this, 'save_project_user'), 10, 3 );
         add_filter( 'user_has_cap', array($this, 'check_project_user_capability'), 10, 4 );
+        //add_shortcode( 'custom_links', array($this, 'custom_links_shortcode' ));
+        add_filter('wp_nav_menu_items', array($this, 'crunchify_add_login_logout_menu'), 10, 2);
+
     }
 
     
@@ -85,6 +88,19 @@ class CustomFunctions{
         return $allcaps;
       }
       
-      
+      function custom_links_shortcode( $atts ) {
+        $atts = shortcode_atts(array('login_txt' => 'Login','profile_txt' => 'My profile','redirect' => '',),$atts);
+        if(is_user_logged_in()) { $gotolink= ($atts['redirect']!='') ? $atts['redirect']  : get_edit_profile_url(); echo '<a href="'.$gotolink.'">'.$atts['profile_txt'].'</a>';}
+        else echo '<a href="'.wp_login_url($atts['redirect']).'">'.$atts['login_txt'].'</a>';
+    }
+
+function crunchify_add_login_logout_menu($items, $args) {
+        ob_start();
+        wp_loginout('index.php');
+        $loginoutlink = ob_get_contents();
+        ob_end_clean();
+        $items .= '<li style=" float: right;">'. $loginoutlink .'</li>';
+    return $items;
+}
 
 }
