@@ -69,6 +69,17 @@ function wp_register_sidebar(){
 add_action('widgets_init', 'wp_register_sidebar');
 
 /*-------------------------------------------------------------------------*/
+/*                        ADD PROJECT TO DATABASE                          */
+/*-------------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------*/
+/*                        PASS PROJECT DATA TO DATABASE                          */
+/*-------------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------------------------*/
 /*                        ADD THEME SUPPORT                                */
 /*-------------------------------------------------------------------------*/
 function custom_theme_setup() {
@@ -191,3 +202,5 @@ function dashboard_page_template($template) {
     return $template;
 }
 add_filter( 'template_include', 'dashboard_page_template' );
+
+
