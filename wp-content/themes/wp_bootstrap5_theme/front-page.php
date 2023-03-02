@@ -48,9 +48,35 @@
     </div>
 
 
-    <div class="contact">
+    <div class="contact-page">
         <h1>CONTACT DETAILS</h1>
         <P>FOr any type of inquiries please dont hesitate to ge intouch with us.<br> The easiest way is to send us an email to the following adress or use the form below.</P>
+        <div class="row justify-content-center">
+    
+
+   
+
+    
+        <form action="" method="post">
+        <div class="form-group">
+            <input type="text" name="fullname" class="form-control input-sm mb-3" id="fullname" placeholder="input your full names here" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="email" class="form-control input-sm mb-3" id="email" placeholder="input your email here" required>
+        </div>
+        <div class="form-group">
+            <input type="number" name="telephone" class="form-control input-sm mb-3" id="telephone" placeholder="input your telephone number here" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="message" class="form-control input-sm mb-3" id="message" placeholder="input your message here" required>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <input type="submit" value="Register" name="submitbtn" class="btn btn-primary btn-block">
+            </div>
+        </div>
+    </form>
+ </div>
     </div>
 
     

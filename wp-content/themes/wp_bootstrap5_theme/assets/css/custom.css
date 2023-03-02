@@ -169,12 +169,17 @@ a {
 }
 
 
-.contact{
+.contact-page{
 	background-color: black;
 	color: white;
 	text-align: center;
 	padding-top: 30px;
 }
+
+.contact-page p{
+	font-size: xx-large;
+	padding-top: 50px;
+} 
 .gradient-custom-2 {
     /* fallback for old browsers */
     background: #fccb90;
