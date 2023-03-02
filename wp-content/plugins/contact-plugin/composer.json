@@ -1,0 +1,22 @@
+{
+    "name": "crisp/contact-plugin",
+    "description": "plugin for me",
+    "type": "project",
+    "license": "GPLv2",
+    "autoload": {
+        "psr-4": {
+            "Crisp\\ContactPlugin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "crispin manda",
+            "email": "crispinmanda06@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "8.2.0",
+        "htmlburger/carbon-fields": "^3.1"
+    }
+}

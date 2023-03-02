@@ -28,36 +28,28 @@ get_header();?>
 
 
       <div class="modal-body">
-      <form>
+      <form method ="POST" action="">
           <div class="form-group">
             <label for="projectName">Project Name</label>
-            <input type="text" class="form-control" id="projectName" placeholder="Enter project name">
+            <input type="text" class="form-control" id="projectName" placeholder="Enter project name" name="projectName" required>
           </div>
           <div class="form-group">
             <label for="task">Task</label>
-            <input type="text" class="form-control" id="task" placeholder="Enter task">
+            <input type="text" class="form-control" id="task" placeholder="Enter task"  name="task" required>
           </div>
           <div class="form-group">
             <label for="startDate">Start Date</label>
-            <input type="date" class="form-control" id="startDate">
+            <input type="date" class="form-control" id="startDate" name="StartDate" required>
           </div>
           <div class="form-group">
             <label for="dueDate">Due Date</label>
-            <input type="date" class="form-control" id="dueDate">
-          </div>
-          <div class="form-group">
-            <label for="projectStatus">Project Status</label>
-            <select class="form-control" id="projectStatus">
-              <option value="new">New</option>
-              <option value="in-progress">In Progress</option>
-              <option value="completed">Completed</option>
-            </select>
+            <input type="date" class="form-control" id="dueDate" name="DueDate" required>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" name ="savechanges">Save changes</button>
       </div>
     </div>
   </div>
