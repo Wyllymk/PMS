@@ -1,3 +1,185 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	/* font-family: "Montserrat"; */
+}
+
+body {
+	/* background: black; */
+}
+
+.homepage {
+	
+	background-size: 100% 100%;
+	background-position: center;
+	min-height: 50vw;
+
+}
+
+.homepage-heading,
+.homepage-content {
+	margin: 0px auto;
+}
+
+.homepage-heading {
+	width: 90%;
+	padding-top: 1vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.heading2 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+}
+.links {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.list {
+	margin: 20px;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	display: inline-block;
+
+}
+
+.brand>li>a {
+	font-weight: 700;
+	font-size: 40px;
+}
+
+.brand>li {
+
+	font-weight: 700;
+	font-size: 40px;
+	color: white;
+}
+
+.links>li>a,
+.member>li>a,
+.member>button,
+.homepage-content>p {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+
+.member {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.member>button {
+	color: white;
+	font-weight: 600;
+	margin: 20px;
+	border: none;
+	padding: 20px;
+	background: rgb(35, 164, 237);
+	border-radius: 4px;
+
+}
+
+.homepage-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 40%;
+	align-items: center;
+	text-align: center;
+	color: white;
+	padding-top: 30px;
+}
+
+.homepage-content>h1 {
+	font-size: 70px;
+	
+}
+
+.homepage-content>p {
+	font-size: 25px;
+	padding: 40px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding-top: 70px;
+}
+
+.buttons>button {
+	padding: 20px;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+
+.login {
+	background: transparent;
+	border: 2px solid white;
+}
+
+.login:hover {
+	background: rgb(35, 164, 237);
+	border: 2px solid white;
+
+}
+
+.contact:hover {
+	background: rgb(35, 164, 237);
+	border: 2px solid white;
+}
+
+.contact {
+	border: 2px solid white;
+	background: transparent;
+}
+
+.second-page{
+	background-color: whitesmoke;
+	text-align: center;
+	height: 50vh;
+}
+
+.second-page h1{
+	font-size: xx-large;
+	font-weight: bolder;
+	padding-top: 70px;
+}
+
+.second-page p{
+	font-size: xx-large;
+	padding-top: 100px;
+}
+
+
+.contact-page{
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.contact-page p{
+	font-size: xx-large;
+	padding-top: 50px;
+} 
 .gradient-custom-2 {
     /* fallback for old browsers */
     background: #fccb90;
