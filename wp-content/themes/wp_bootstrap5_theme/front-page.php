@@ -20,10 +20,9 @@
                 <li class="list">PROJECT MANAGEMENT SYSTEM</li>
             </div>
             <div class="links">
-                <li class="list"><a href="#">Home</a></li>
-                <li class="list"><a href="#">Product</a></li>
-                <li class="list"><a href="#">Pricing</a></li>
-                <li class="list"><a href="#">Contact</a></li>
+                <li class="list"><a href="#homepage">Home</a></li>
+                <li class="list"><a href="#second-page">Service</a></li>
+                <li class="list"><a href="#contact-page">Contact</a></li>
             </div>
         </div>
         <div class="member">

@@ -155,20 +155,19 @@ a {
 }
 
 .second-page h1{
-	font-size: xx-large;
-	font-weight: bolder;
+	font-size: 1cm;
+	font-weight:bolder;
 	padding-top: 70px;
-	size: 3cm;
+	
 }
 
 .second-page p{
-	font-size: xx-large;
-	padding-top: 100px;
+	font-size: large;
+	padding-top: 50px;
 }
 
 
 .contact-page{
-	background-color: ;
 	color: white;
 	text-align: center;
 	padding-top: 30px;
