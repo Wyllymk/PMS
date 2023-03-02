@@ -34,10 +34,23 @@
         <div class="homepage-content">
             <h1>Effortlessly manage Your Projects with our Powerful Project Management System.</h1>
             <div class="buttons">
-                <button class="quote">Login</button>
-                <button class="learn">Contact-Us</button>
+                <button class="login">Login</button>
+                <button class="contact">Contact-Us</button>
             </div>
         </div>
+    </div>
+
+    <div class="second-page">
+        <h1>Offered Service</h1>
+        <p>Effortlessly Manage Your Projects With Our Powerful Project Management System</p>
+        <p>Assign Tasks, Track Progress and Streamline Workflows With Ease</p>
+
+    </div>
+
+
+    <div class="contact">
+        <h1>CONTACT DETAILS</h1>
+        <P>FOr any type of inquiries please dont hesitate to ge intouch with us.<br> The easiest way is to send us an email to the following adress or use the form below.</P>
     </div>
 
     
