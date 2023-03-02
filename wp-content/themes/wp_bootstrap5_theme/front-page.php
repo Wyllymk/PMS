@@ -56,7 +56,7 @@
     <div class="card mt-2 mx-auto p-4 bg-light">
         <div class="card-body bg-light">
     
-        <div class = "container" style="padding-bottom:10px;">
+        <div class = "container" style="padding-bottom:30px;">
         <form id="contact-form" role="form" method="post">
             <div class="controls">
 
