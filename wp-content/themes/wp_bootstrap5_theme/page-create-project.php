@@ -70,7 +70,7 @@ if (isset( $_POST['cpt_nonce_field'] ) && wp_verify_nonce( $_POST['cpt_nonce_fie
 
 ?>
 
-<div class="container mt-5">
+<div class="container my-5">
     <div class="row">
         <div class="col">
             

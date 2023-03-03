@@ -1,7 +1,7 @@
 
-        <footer class="bg-light text-center text-lg-start" style="padding-top:50px;">
+        <footer class="bg-light text-center text-lg-start" >
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="text-center p-3" >
     © 2023 Copyright:
     <a class="text-dark" href="#">Cohort-8 Wordpress</a>
   </div>

@@ -53,10 +53,21 @@ endif;
 <section class="content">
             <div class="container-fluid">
                 <div class="col-lg-12">
+                <h2 class="my-5 text-center text-light">
+                        <?php global $current_user; wp_get_current_user(); ?>
+                        <?php 
+                            if ( is_user_logged_in() ) { 
+                            echo 'Welcome ' . $current_user->user_login . "\n"; 
+                            } else { 
+                            wp_loginout(); 
+                            } 
+                        ?>
+                    </h2>
                     <div class="m-5 card card-outline card-success">
                         <div class="card-header">
-                            <div class="card-tools">
-                                <h5 class="text-center text-primary mt-2"><u>Complete the Projects Listed</u></h5>
+                            <div class="card-tools d-flex mb-2">
+                                <h5 class="text-center text-primary mt-2 flex-grow-1">Complete the Projects Listed</h5>
+                                <a class=" ms-auto btn btn-primary" href="../completed-projects"> Completed Projects</a>
                             </div>
                             <div class="alert alert-warning alert-dismissible text-center" <?php if ($project_status == 'In Progress' || $project_status == 'Completed'  || $project_status == '') { echo'style="display:none;"'; } ?> role="alert">
                                 <strong>Warning!</strong> Once a project has been accepted it cannot be retracted.

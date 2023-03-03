@@ -198,6 +198,8 @@ function dashboard_page_template($template) {
         }
         elseif(in_array('developer', $user->roles)){
             $new_template = locate_template( array( 'dashboard-d.php' ) );
+        }else{
+            $new_template = locate_template( array( 'front-page.php' ) );
         }
         if ( '' != $new_template ) {
             $template = $new_template;

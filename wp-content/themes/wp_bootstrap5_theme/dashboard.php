@@ -8,21 +8,20 @@ get_header();
     <link rel="stylesheet" href="wp-content/themes/wp_bootstrap5_theme/assets/css/dash.css">
 </head>
 
-<header id = 'main-header'>
-<div class = 'account'>
-<figure>
-<div class = 'avatar'>
-<img src = 'wp-content/themes/wp_bootstrap5_theme/assets/img/user.png' alt = '' class = 'w-100 h-100'>
-<div class = 'effect'></div>
+    <div class="homepage-content">
+        <h1>Effortlessly manage Your Projects with our Powerful Project Management System.</h1>
+        <div class="buttons">
+            <button class="login">Login</button>
+            <button class="contact">Contact-Us</button>
+        </div>
+    </div>
 </div>
-<figcaption>
-<h2 class = 'text-md'>John Doe</h2>
-</figcaption>
-</figure>
-</div>
-<div class = 'search'>
-<span class = 'icon flaticon-search color-fff'></span>
-<input type = 'text' placeholder = 'Search' name = 'search' id = 'search'>
+
+<div class="second-page">
+    <h1>OFFERED SERVICES</h1>
+    <p>Effortlessly Manage Your Projects With Our Powerful Project Management System</p>
+    <p>Assign Tasks, Track Progress and Streamline Workflows With Ease</p>
+
 </div>
 </header>
 <!-- End Header -->
@@ -33,12 +32,6 @@ get_header();
 <div class = 'col-xl-1 col-sm-2'>
 <nav class = 'menu-left'>
 <ul class = 'list'>
-  <li>
-<a href = '#' title = ''>
-<span class = 'icon flaticon-home'></span>
-<span class = 'text'><h3>Home</h3></span>
-</a>
-</li>
 <li>
 <a href = '#' title = ''>
 <span class = 'icon flaticon-home'></span>
@@ -204,40 +197,20 @@ Action
 <div class = 'dropdown-menu' style = ''>
 <a class = 'dropdown-item new_productivity' data-pid = '2' data-tid = '3'  data-task = 'Task Test'  href = 'javascript:void(0)'>Add Productivity</a>
 </div>
-</td>
-</tr>
-<tr>
-<td class = 'text-center'>4</td>
-<td>
-<p><b>Sample Project 102</b></p>
-</td>
-<td>
-<p><b>Test 23</b></p>
-<p class = 'truncate'>Sample test 23</p>
-</td>
-<td><b>Dec 02, 2022</b></td>
-<td><b>Dec 31, 2022</b></td>
-<td class = 'text-center'>
-<span class = 'badge badge-primary'>Started</span>
-</td>
-<td>
-<span class = 'badge badge-secondary'>Pending</span>
-</td>
-<td class = 'text-center'>
-<button type = 'button' class = 'btn btn-default btn-sm btn-flat border-info wave-effect text-info dropdown-toggle' data-toggle = 'dropdown' aria-expanded = 'true'>
-Action
-</button>
-<div class = 'dropdown-menu' style = ''>
-<a class = 'dropdown-item new_productivity' data-pid = '2' data-tid = '4'  data-task = 'Test 23'  href = 'javascript:void(0)'>Add Productivity</a>
+    
+
 </div>
-</td>
-</tr>	 -->
-</tbody>
-</table>
+
+
 </div>
 </div>
+
+
+
+
 </div>
 </div>
-</section>
-<?php get_footer();
-?>
+
+
+
+<?php get_footer();?>

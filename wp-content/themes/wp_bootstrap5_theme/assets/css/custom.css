@@ -5,12 +5,21 @@
 	/* font-family: "Montserrat"; */
 }
 
+body{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+footer{
+    margin-top: auto;
+}
 .homepage {
 	
 	background-size: 100% 100%;
 	background-position: center;
 	min-height: 50vw;
 	font-family: "Montserrat";
+	background-color: black;
 
 }
 
@@ -170,7 +179,9 @@ a {
 .contact-page{
 	color: white;
 	text-align: center;
+	background-color: black;
 	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 .contact-page p{

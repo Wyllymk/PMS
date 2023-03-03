@@ -1,17 +1,5 @@
 <?php get_header();?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="wp-content/themes/wp_bootstrap5_theme/assets/css/custom.css">
-<title>PMS</title>
-
-</head>
-<body>
-
 
 <div class="homepage">
     <div class="homepage-heading">
@@ -40,14 +28,14 @@
 </div>
 
 <div class="second-page">
-    <h1>Offered Service</h1>
+    <h1>OFFERED SERVICES</h1>
     <p>Effortlessly Manage Your Projects With Our Powerful Project Management System</p>
     <p>Assign Tasks, Track Progress and Streamline Workflows With Ease</p>
 
 </div>
 
 
-<div class="contact-page">
+<div class="contact-page" style="margin-bottom:50px">
     <h1>CONTACT DETAILS</h1>
     <P>For any type of inquiries please dont hesitate to ge intouch with us.<br> The easiest way is to send us an email to the following adress or use the form below.</P>
     <div class="row justify-content-center">
@@ -56,7 +44,7 @@
     <div class="card mt-2 mx-auto p-4 bg-light">
         <div class="card-body bg-light">
     
-        <div class = "container" style="padding-bottom:10px;">
+        <div class = "container" style="padding-bottom:30px;">
         <form id="contact-form" role="form" method="post">
             <div class="controls">
 
