@@ -5,6 +5,14 @@
 	/* font-family: "Montserrat"; */
 }
 
+body{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+footer{
+    margin-top: auto;
+}
 .homepage {
 	
 	background-size: 100% 100%;
