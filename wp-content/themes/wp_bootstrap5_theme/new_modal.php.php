@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Modal
+ * Template Name: Create Project
 */
 get_header();?>
 <?php
@@ -53,6 +53,8 @@ if (isset( $_POST['cpt_nonce_field'] ) && wp_verify_nonce( $_POST['cpt_nonce_fie
         // insert the post into the database
         $project_start = $_POST['start'];
 
+        global $post;
+        $post_id = $post->ID;
         $project_id = wp_insert_post( $new_project);
         //add_post_meta($cpt_id,'project_start',$project_start);
         if ($project_id) {
@@ -71,61 +73,61 @@ if (isset( $_POST['cpt_nonce_field'] ) && wp_verify_nonce( $_POST['cpt_nonce_fie
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <form class="p-3 mb-2 text-black" id="form1" action="" method="post">
+            
+            <form class="form card shadow p-4"action="" method="post">
                 <?php if (isset($alert_message)) : ?>
                     <div class="alert alert-<?php echo $alert_type; ?> mb-3" role="alert">
                         <?php echo $alert_message; ?>
                     </div>
                 <?php endif; ?>
-                <h3 class="text-body">New Project</h3>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mt-2">
-                            <label for="title"><?php _e('Enter the Project Title:', 'mytextdomain'); ?></label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Project Title">
-                        </div>
-                        <div class="form-group mt-2">
-                            <label for="start_date">Start Date:</label>
-                            <input type="date" class="form-control" id="start_date" name="start" placeholder="Enter Project Start Date here">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mt-2">
-                            <label for="content"><?php _e('Enter the Project Description:', 'mytextdomain'); ?></label>
-                            <textarea rows="3" class="form-control" id="content" name="content" placeholder="Enter Project Description here"></textarea>
-                        </div>
-                        <div class="form-group mt-2">
-                            <label for="due_date">Due Date:</label>
-                            <input type="date" class="form-control" id="due_date" name="deadline" placeholder="Enter Project Deadline here">
-                        </div>
-                    </div>
+                <h3 class="text-center text-primary">Add Project</h3>
+                <div class="form-group mt-2">
+                    <label for="title"><?php _e('Enter the Project Title:', 'mytextdomain'); ?></label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Project Title" required>
                 </div>
+                <div class="form-group mt-2">
+                    <label for="content"><?php _e('Enter the Project Description:', 'mytextdomain'); ?></label>
+                    <textarea rows="3" class="form-control" id="content" name="content" placeholder="Enter Project Description here" required></textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="content">Start Date:</label>
+                    <input type="date" class="form-control" id="start_date" name="start" placeholder="Enter Project Start Date here" required>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="content">Due Date:</label>
+                    <input type="date" class="form-control" id="due_date" name="deadline" placeholder="Enter Project Deadline here" required>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="hidden" class="form-control" id="status" name="status" value="Pending" placeholder="Project Status">
+                </div>
+                <?php
+                // Get all users with the "User" role
+                $users = get_users( array(
+                    'role'    => 'developer',
+                    'orderby' => 'user_nicename',
+                ) );
+                $user_options = array();
+                foreach ( $users as $user ) {
+                    $user_options[ $user->ID ] = $user->display_name;
+                }
+                ?>
                 <div class="form-group mt-2">
                     <select class="form-control" id="user" name="user">
                         <option value="">Select Developer</option>
-                        <?php foreach ($user_options as $user_id => $user_name) : ?>
+                        <?php foreach ( $user_options as $user_id => $user_name ) : ?>
                             <option value="<?php echo $user_id; ?>"><?php echo $user_name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="form-group mt-2 text-center">
-                    <button class="btn btn-primary px-5" id="btn1" type="submit"><?php _e('Submit', 'mytextdomain') ?></button>
+                    <button class="btn btn-primary px-5" type="submit"><?php _e('Submit', 'mytextdomain') ?></button>
                     <input type='hidden' name='project' id='project' value='project' />
+                    <!-- <input class="btn btn-primary px-5" type="button" value="Submit" name="projectsubmit"> -->
                 </div>
-                <?php wp_nonce_field('cpt_nonce_action', 'cpt_nonce_field'); ?>
+                <?php wp_nonce_field( 'cpt_nonce_action', 'cpt_nonce_field' ); ?>
             </form>
         </div>
     </div>
-</div> 
-<style>
-    .form-group {
-        margin-bottom: 0.5rem;
-    }
-
-    #btn1 {
-        margin-top: 1rem;
-    }
-</style> 
+</div>
 
 <?php get_footer();?>
