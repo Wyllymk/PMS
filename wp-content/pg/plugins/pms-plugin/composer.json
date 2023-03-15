@@ -1,0 +1,22 @@
+{
+    "name": "crisp/pms-plugin",
+    "description": "this is a pms plugin",
+    "type": "project",
+    "license": "GPL v2",
+    "autoload": {
+        "psr-4": {
+            "Crisp\\PmsPlugin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "crispin manda",
+            "email": "crispinmanda06@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4": {"Inc\\": "./Inc"}
+    }
+}
